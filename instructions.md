@@ -1,19 +1,91 @@
-# Git Workflow Practice
-## What is Software Engineering
+# Instructions
 
-What is software engineering? Nobody seems to know. Everyone has an opinion, and everyone agrees that it is of the utmost importance, but there is little consensus as to what it is. But before addressing the above question, let us first answer the question: Why is it called "engineering"?
+In this assignment, you will familiarize yourself with two common [version control](https://knowledge.kitchen/Version_control) workflows using [Git and GitHub](Version_control_with_Git_and_GitHub) - a **centralized workflow**, and a **forking workflow** (also known as the **open source workflow**).
 
-It is called "engineering" because early practitioners wanted to call it "software physics," but that term was already in use. They wanted to call it software physics because they believed that the process of producing software could be formalized with such rigor that it would be on all fours with physics. Indeed, texts from the '80s are populated with theories, derivations, tables, graphs, equations and formulae, apparently in an attempt to appear mathematical and scientific in nature. Within a few years however, the inadequacy of those books became clear, and the situation changed rapidly, and today's texts contain virtually no formulae or equations. In spite of that, the title software engineering has been retained, authors claiming in their introductions that, e.g., "Software engineering employs engineering methods, processes, techniques and measurement." Exactly what those engineering methods, processes, techniques and measurements are, is never stated, and the books never refer to them after the introduction. Of course SE is an artificial science, whereas physics and chemistry are natural sciences. Nonetheless, if it is a true science, and true engineering, we should expect to find some sort of system of laws and theories with experiments and predictions.
+You will set up a remote repository on GitHub and a local cloned [repository](https://knowledge.kitchen/Version_control#Repository) for your own project and practice [pushing and pulling](https://knowledge.kitchen/Version_control_with_Git_and_GitHub#Pushing_and_pulling) to/from this remote repository. You will also contribute to another student's project by [forking](https://knowledge.kitchen/Version_control_with_Git_and_GitHub#Fork) their repository, making changes, and issuing a **pull request** to them to incorporate your changes.
 
-If we pick up an engineering book on how to design an automobile engine, we do not find sections on the waterfall model or the spiral model that we find in SE texts. We would expect to find sections on pistons and cams, and we would not expect it to contain sections on dashboard layout or cost estimates. And yet in SE texts we can find topics like screen layout and cost estimates, and we also see topics like team management, human factors, risk management and user interfaces, among others. Such topics are very important, but they belong to areas like marketing, management, IT and psychology, not engineering. Software production is very different from engineering, and it takes some imagination to see significant parallels between the two. A software engineer is no more an engineer than a novelist is a word engineer.
+Execute the following instructions in order.
 
-Perhaps the above observations are a bit harsh, and the problem is merely verbal and the title is a misnomer, a remnant from an earlier time. That is unfortunate, because the name implies scientific rigor, and opens software engineering to the charge that it is a pseudo-science flying under false colors. We would be better off if the name were changed to "software production techniques" or some such.
+## Before you get started
 
-Back to the original question. There are many textbooks on software engineering on the market, and a survey of their indices and chapter topics reveals that they are very disjointed. One book will treat a topic as important, and the next book omits it entirely. About the only commonality to be found is the insistence that SE has something to do with engineering. That is due partly to the complex, amorphous nature of software production, and partly to a one-size-fits-all mentality. Software projects and programmers vary enormously, and some require vastly different approaches than others. Supposing that all software programs can fit under the same umbrella is a mistake akin to thinking that mechanical, electrical and chemical engineering can be lumped together.
+### Disclosure
 
-To be sure, there are many areas of software research that are properly called scientific. Bearing this in mind, we should re-name software engineering, dividing it into (A) software theory/research, and (B) software production techniques.
+Note that with version control systems such as Git, it is easy to verify what work has or has not been done by whom on any project via the [log files](https://knowledge.kitchen/Version_control_with_Git_and_GitHub#Viewing_logs). So activity using such systems cannot be faked (not that you would ever consider such a thing)!
 
-### Reference
+### Download and install Git
 
-William S. Curran
-Website: https://ubiquity.acm.org/article.cfm?id=763745
+Download and install on your local machine, if you haven't already done so.
+
+## Centralized workflow
+
+In this part, we will try out a simple [centralized workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#centralized-workflow), where developers work with two copies of a repository: a local copy, where changes are made; and a remote copy, where completed changes are uploaded in order to be archived and shared with others.
+
+### Create a remote GitHub repository
+
+1.  Create an account on [GitHub](https://github.com), if you don't already have one.
+2.  Create a new repository in your account on GitHub. If you are viewing this document in your own repository, then this is already done!
+
+### Create a local Git repository
+
+1.  Clone your remote repository on GitHub to your own local machine.
+
+2.  [Create a README.md file](https://knowledge.kitchen/Version_control_with_Git_and_GitHub#Create_a_new_file) in that directory using valid Markdown syntax.
+    [Edit](https://knowledge.kitchen/Basic_computer_concepts#Creating_and_editing_files) this file such that it includes the following:
+    - a link to an article or web site you find interesting related to software development/engineering (indirect relationships are ok)
+    - a paragraph or two about what you find interesting about that article
+    - remember that this will be public
+    - Use Markdown syntax to make it look nice
+3.  [Commit](https://knowledge.kitchen/Version_control_with_Git_and_GitHub#Commit_changes_to_the_repository) your README.md file to the local repository, including a meaningful commit message.
+
+### Push changes to the upstream remote repository
+
+1.  [Push](https://knowledge.kitchen/Version_control_with_Git_and_GitHub#Push_to_the_remote_repository) the latest version of the files in your local repository to the GitHub repository you created.
+2.  Your two repositories should now be in-sync
+
+### Share your repository with others
+
+1.  Share the link to your GitHub repository on the course's Discord workspace and invite others to collaborate... they will do so via the **forking workflow** outlined below.
+
+## Forking workflow
+
+In this part, we will practice the [forking workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow), also known as the **open source workflow**. Developers following this type of workflow interact with at least 3 different copies of a repository: an 'official' remote repository that the developer ultimately intends to contribute to; a remote clone of that official repository (known as a "fork"), a local clone of that remote clone where the developer makes changes.
+
+### Find another repository to work with
+
+1.  Wait for other students to also share their repository links from the centralized workflow part of this assignment.
+2.  Select one of the other students' GitHub repository links that you find interesting.
+
+### Fork that repository
+
+1.  Fork that repository on GitHub - you now have a clone of that repository in your own GitHub account - we'll refer to this repository as "your forked repository"
+
+### Make a local clone of that fork
+
+1.  [Clone](https://knowledge.kitchen/Version_control_with_Git_and_GitHub#Clone) your forked repository from GitHub to a new directory on your local machine (not the same directory as your original repository)
+
+### Create a branch
+
+1.  [Create a new branch](https://knowledge.kitchen/Version_control_with_Git_and_GitHub#Branch) of your forked repository on your local machine where you will make changes to it. Switch to (i.e `checkout`) that branch.
+2.  Edit the README.md file in your forked repository on your local machine to include a comment from you about that same article mentioned in the file. Make it looks nice using Markdown syntax.
+    - Include your name in the edit you make, so we can clearly see who did it (we can also verify this with the Git change logs)
+3.  Commit these changes to your local repository, including a meaningful commit message
+
+### Push changes to your remote fork
+
+1.  [Pull](https://knowledge.kitchen/Version_control_with_Git_and_GitHub#Pushing_and_pulling) any changes others may have made to the remote repository on GitHub while you were working (use the `--rebase` option on the git pull to put your own changes to the tip of the change history when merged)
+2.  [Push](https://knowledge.kitchen/Version_control_with_Git_and_GitHub#Pushing_and_pulling) your changes to your remote repository on GitHub
+3.  The branch you created with the changes you made will now be updated on your forked repository on GitHub
+
+### Issue a pull request to the original repository
+
+1.  [Make a pull request](https://help.github.com/articles/creating-a-pull-request/) on the other student's original repository from which you forked yours, asking them politely to include your changes in their original repository
+
+### Accept contributions to your repository
+
+1.  Make sure at least one other student has made a pull request with some changes to your own original repository - use Discord to coordinate this
+2.  If the pull request changes you dislike, leave a response indicating why you have not accepted them, asking the other contributor to fix the problems
+3.  Once you are happy with the changes, accept them
+4.  Pull the updated files to the local repository of your project
+5.  Merge any and all branches to the 'master' branch
+6.  Commit any changes, including a meaningful commit message
+7.  Push the result to the remote repository on GitHub
